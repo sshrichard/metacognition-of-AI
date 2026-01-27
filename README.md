@@ -4,9 +4,9 @@ Supporting repository for: "Measuring the metacognition of conversational AI mod
 
 In this paper, we carry out two sets of experiments. 
 
-• The meta-d' experiments consists in submitting type 1 and type 2 tasks to the AI models in order to estimate their meta-d' and $M_ratio$.
+• The meta-d' experiments consists in submitting type 1 and type 2 tasks to the AI models in order to estimate their meta-d' and $M_{ratio}$.
 
-• The c-calibration experiments consists in modifying the prompts in order to make the AI models calibrate accordingly their type-1 decision criterion c (e.g., by incentivizing caution when responding either S1 or S2).
+• The $c$-calibration experiments consists in submitting a type 1 task and designing the prompts in order to make the AI models calibrate accordingly their type-1 decision criterion $c$ (e.g., by incentivizing caution when responding either S1 or S2).
 
 ## Getting started ##
 
