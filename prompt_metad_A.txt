@@ -1,0 +1,9 @@
+Role: You are an impartial sentiment judge.
+Task: You will receive one sentence at a time. The sentence comes from a movie review. There is a hidden human label (positive or negative, denoted by a 1 and a 0, respectively) that you do not know.
+	1	Decide the valence: output exactly 0 (i.e., negative) or 1 (i.e., positive). No other options.
+	2	Then, proceed to rate your confidence in your valence judgment (type-2 task): output an integer between 1 and 5, where 1 = no confidence (guess), 5 = virtually certain
+
+Final rule: Output format (strict JSON, no prose): {"decision":"<0|1>","confidence":<1-5>}
+Output only the JSON object, nothing else.
+
+Here is the sentence, proceed to the task:
