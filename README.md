@@ -19,13 +19,13 @@ Be sure to add in the folder `metacognition-of-AI` the content of the folder `ma
 
 Executing the following line runs neta-d' experiment under the sentiment analysis task with GPT-5:
 ```bash
-python metacognition-of-AI/meta_d.py
+python metacognition-of-AI/meta_d_AI.py
 ```
 
 Executing the following line runs a c-calibration experiment under the sentiment analysis task with GPT-5:
 ```bash
-python metacognition-of-AI/c_calibration.py
-``` 
+python metacognition-of-AI/c_calibration_AI.py
+```
 
 
 ## Changing task ##
