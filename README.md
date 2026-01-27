@@ -13,24 +13,28 @@ In this paper, we carry out two sets of experiments.
 Clone this repository on your local machine by running:
 
 ```bash
-git clone git@github.com:Bitbol-Lab/metacognition-of-AI.git
+git clone git@github.com:sshrichard/metacognition-of-AI.git
 ``` 
- 
+Be sure to add in the folder `metacognition-of-AI` the content of the folder from `matlab` in https://github.com/metacoglab/HMeta-d which is the GitHub page of the paper "HMeta-d: hierarchical Bayesian estimation of metacognitive efficiency from confidence ratings" (Fleming, 2017) from which comes from the hierarchical Bayesian model we use in the current paper.
 
-Executing the following line runs a working example of the 3D system:
+Executing the following line runs neta-d' experiment under the sentiment analysis task with GPT-5:
 ```bash
-python T4P-T6SS-interplay/T4P_T6SS_interplay_3D.py
+python metacognition-of-AI/meta_d.py
 ```
 
-Executing the following line runs a working example of the 2D system:
+Executing the following line runs a c-calibration experiment under the sentiment analysis task with GPT-5:
 ```bash
-python T4P-T6SS-interplay/T4P_T6SS_interplay_2D.py
+python metacognition-of-AI/c_calibration.py
 ``` 
 
 
-## Requirements ##
+## Changing task ##
 
-In order to use the functions `main`, Numba is required.
+In progress
+
+## Changing model ##
+
+In progress
 
 ## Usage ##
 
