@@ -17,7 +17,7 @@ git clone git@github.com:sshrichard/metacognition-of-AI.git
 ``` 
 Be sure to add in the folder `metacognition-of-AI` the content of the folder `matlab` from this link: https://github.com/metacoglab/HMeta-d, which is the GitHub page of the paper "HMeta-d: hierarchical Bayesian estimation of metacognitive efficiency from confidence ratings" (Fleming, 2017) from which comes from the hierarchical Bayesian model we use in the current paper.
 
-Executing the following line runs neta-d' experiment under the sentiment analysis task with GPT-5:
+Executing the following line runs meta-d' experiment under the sentiment analysis task with GPT-5:
 ```bash
 python metacognition-of-AI/meta_d_AI.py
 ```
