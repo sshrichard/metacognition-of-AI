@@ -17,7 +17,7 @@ git clone git@github.com:sshrichard/metacognition-of-AI.git
 ``` 
 Be sure to add in the folder `metacognition-of-AI` the content of the folder `matlab` from this link: https://github.com/metacoglab/HMeta-d, which is the GitHub page of the paper "HMeta-d: hierarchical Bayesian estimation of metacognitive efficiency from confidence ratings" (Fleming, 2017) from which comes from the hierarchical Bayesian model we use in the current paper.
 
-Executing the following line runs meta-d' experiment under the sentiment analysis task with GPT-5:
+Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) with GPT-5:
 ```bash
 python metacognition-of-AI/meta_d_AI.py
 ```
@@ -32,9 +32,9 @@ python metacognition-of-AI/c_calibration_AI.py
 
 In progress
 
-## Changing model ##
 
-In progress
+
+
 
 ## Usage ##
 
@@ -48,4 +48,4 @@ Besides, if you want to prevent the diffusion of aggregates as whole units, just
 
 ## Warning ##
 
-Note that in the comments of the code we use the words particles, cells and bacteria in an interchangable fashion.
+In case of transient API/server errors (rate limits, timeouts, outages, ...), it is recommended to add some code handling errors and retries, like an exponential backoff retry loop, to maintain continuity in data collecting without a fatal crash.
