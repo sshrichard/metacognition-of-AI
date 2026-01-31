@@ -29,7 +29,8 @@ Executing the following line runs meta-d' experiment under the sentiment analysi
 ```bash
 python metacognition-of-AI/meta_d_AI_mistral.py
 ```
-Note that, by default, `meta_d_AI_GPT.py`, `meta_d_AI_deepseek.py` and `meta_d_AI_mistral.py` interacts tithe OpenAI, DeepSeek and Mistral API, respectively, with the arguments "gpt-5", "deepseek-chat" and "mistral-large-latest", the latter two invoking DeepSeek-V3 and Large-Instruct-2411 at the time of our simulations. **We recomment caution to the users, especially regarding the model's name saved in the data files when running the manuscripts.**
+
+**Please read the usage section below that raises critical points.**
 
 Executing the following line runs a c-calibration experiment under the sentiment analysis task with GPT-5:
 ```bash
@@ -52,20 +53,57 @@ base_PROMPT = fileread("prompt_metad_A.txt");
 %-------------------------------------------------------------------------%
 ```
 
+Also, when switching to either task B or C, change the "loading dataset" part accordingly. This means: replace
+
+```
+dataset_name = 'SST-2';
+numSamples = 100; % number of sentences submitted to the charbot
+
+file_name = "train-00000-of-00001.parquet";
+testData = parquetread(file_name);
+
+sentences = testData.sentence; % column "sentence"
+labels    = testData.label;    % column "label"
+
+idx = randperm(height(testData), numSamples); % we randomly select some entries
+sampledSentences = sentences(idx);
+sampledLabels    = labels(idx);
+```
+
+by 
+
+```
+file_name = "Test4Plus_Raw.txt";
+T = readtable(file_name, 'Delimiter', '\t', 'ReadVariableNames', false);
+% If the separator is ',', use 'Delimiter', ','
+
+sentences = T.Var2;    % second column = sentences
+labels    = T.Var1;    % first column = labels
+
+idx = randperm(height(T), numSamples);
+
+sampledSentences = sentences(idx);
+sampledLabels    = labels(idx);
+```
+
 **$c$-calibration experiments**
 
 IN PROGRESS
 
 ## Usage ##
 
-In the files `T4P_T6SS_interplay_3D.py` and `T4P_T6SS_interplay_2D.py`, the function
-`
-main
-`
-simulates a 40^3 (resp. 100^2) large body-centred cubic (resp. triangular) lattice with 50 prey and 50 predators, with matching pili, during 10 minutes, and yields the number of prey, predators and lysing prey over time. These parameters can be tuned.
+By default, `meta_d_AI_GPT.py`, `meta_d_AI_deepseek.py` and `meta_d_AI_mistral.py` interacts tithe OpenAI, DeepSeek and Mistral API, respectively, with the arguments "gpt-5", "deepseek-chat" and "mistral-large-latest", the latter two invoking DeepSeek-V3 and Large-Instruct-2411 at the time of our simulations. **We recomment caution to the users, especially regarding the model's name saved in the data files when running the manuscripts.**
 
-Besides, if you want to prevent the diffusion of aggregates as whole units, just replace line 245 `elif number_of_free_neighbors < 8:` (resp. `elif number_of_free_neighbors < 6:`) by `elif False:` so that the code dedicated to the diffusion of aggregates as whole units is never executed.
+`numSamples` specifies the number of sentences submitted to the model. The larger `numSamples`, the larger the probability that a technical issue arises when interacting with the API (see the Warning section below).
+
+**meta-d' experiments** 
+
+IN PROGRESS
+
+**meta-d' experiments** 
+
+IN PROGRESS
 
 ## Warning ##
 
-In case of transient API/server errors (rate limits, timeouts, outages, ...), it is recommended to add some code handling errors and retries, like an exponential backoff retry loop, to maintain continuity in data collecting without a fatal crash.
+In case of transient API/server errors (rate limits, timeouts, outages, ...), it is recommended to add some code handling errors and retries, like an exponential backoff retry loop, to maintain continuity in data collecting without a fatal crash. Similarly, a few lines are included to handle potential errors arising from response formatting.
