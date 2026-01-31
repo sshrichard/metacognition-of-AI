@@ -17,10 +17,19 @@ git clone git@github.com:sshrichard/metacognition-of-AI.git
 ``` 
 Be sure to add in the folder `metacognition-of-AI` the content of the folder `matlab` from this link: https://github.com/metacoglab/HMeta-d, which is the GitHub page of the paper "HMeta-d: hierarchical Bayesian estimation of metacognitive efficiency from confidence ratings" (Fleming, 2017) from which comes from the hierarchical Bayesian model we use in the current paper.
 
-Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) with GPT-5:
+Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the OpenAI API:
 ```bash
-python metacognition-of-AI/meta_d_AI.py
+python metacognition-of-AI/meta_d_AI_GPT.py
 ```
+Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the DeepSeek API:
+```bash
+python metacognition-of-AI/meta_d_AI_deepseek.py
+```
+Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the Mistral API:
+```bash
+python metacognition-of-AI/meta_d_AI_mistral.py
+```
+Note that, by default, `meta_d_AI_GPT.py`, `meta_d_AI_deepseek.py` and `meta_d_AI_mistral.py` interacts tithe OpenAI, DeepSeek and Mistral API, respectively, with the arguments "gpt-5", "deepseek-chat" and "mistral-large-latest", the latter two invoking DeepSeek-V3 and Large-Instruct-2411 at the time of our simulations. We recomment caution to the users, especially regarding the model's name saved in the data files when running the manuscripts.
 
 Executing the following line runs a c-calibration experiment under the sentiment analysis task with GPT-5:
 ```bash
