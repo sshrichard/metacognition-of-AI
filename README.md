@@ -77,8 +77,8 @@ file_name = "Test4Plus_Raw.txt";
 T = readtable(file_name, 'Delimiter', '\t', 'ReadVariableNames', false);
 % If the separator is ',', use 'Delimiter', ','
 
-sentences = T.Var2;    % second column = sentences
-labels    = T.Var1;    % first column = labels
+sentences = T.Var2;    % column "sentence"
+labels    = T.Var1;    % column "label"
 
 idx = randperm(height(T), numSamples);
 
