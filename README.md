@@ -17,15 +17,15 @@ git clone git@github.com:sshrichard/metacognition-of-AI.git
 ``` 
 Be sure to add in the folder `metacognition-of-AI` the content of the folder `matlab` from this link: https://github.com/metacoglab/HMeta-d, which is the GitHub page of the paper "HMeta-d: hierarchical Bayesian estimation of metacognitive efficiency from confidence ratings" (Fleming, 2017) from which comes from the hierarchical Bayesian model we use in the current paper.
 
-Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the OpenAI API:
+Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
 python metacognition-of-AI/meta_d_AI_GPT.py
 ```
-Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the DeepSeek API:
+Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
 ```bash
 python metacognition-of-AI/meta_d_AI_deepseek.py
 ```
-Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the Mistral API:
+Executing the following line runs meta-d' experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
 ```bash
 python metacognition-of-AI/meta_d_AI_mistral.py
 ```
