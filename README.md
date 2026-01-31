@@ -39,11 +39,22 @@ python metacognition-of-AI/c_calibration_AI.py
 
 ## Changing task ##
 
-In progress
+# meta-d' experiments #
 
+`prompt_metad_A`, `prompt_metad_B` and `prompt_metad_C` are the prompts used for the meta-d' experiments under the sentiment analysis task (i.e., task A), the oral versus written classification task (i.e., task B) and the word depletion detection task (i.e., task C), respectively.
 
+You can change the considered task by changing the prompt there:
+```
+%-------------------------------------------------------------------------%
+% Prompt %
+%-------------------------------------------------------------------------%
+base_PROMPT = fileread("prompt_metad_A.txt");
+%-------------------------------------------------------------------------%
+```
 
+# c-calibration experiments #
 
+IN PROGRESS
 
 ## Usage ##
 
