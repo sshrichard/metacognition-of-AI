@@ -52,7 +52,7 @@ base_PROMPT = fileread("prompt_metad_A.txt");
 %-------------------------------------------------------------------------%
 ```
 
-**c-calibration experiments**
+**$c$-calibration experiments**
 
 IN PROGRESS
 
