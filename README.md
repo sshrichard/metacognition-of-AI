@@ -39,29 +39,30 @@ python metacognition-of-AI/meta_d_AI_mistral.py
 
 <br>
 
-**c-calibration experiments**
+**$c$-calibration experiments**
 
-Executing the following line runs a c-calibration experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
+Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
 python metacognition-of-AI/c_calibration_GPT.py
 ```
-Executing the following line runs a c-calibration experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
+Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
 ```bash
 python metacognition-of-AI/c_calibration_deepseek.py
 ```
-Executing the following line runs a c-calibration experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
+Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
 ```bash
 python metacognition-of-AI/c_calibration_mistral.py
 ```
 
 
 ## Changing task ##
-
-**meta-d' experiments** 
+ 
 
 `prompt_metad_A`, `prompt_metad_B` and `prompt_metad_C` are the prompts used for the meta-d' experiments under the sentiment analysis task (i.e., task A), the oral versus written classification task (i.e., task B) and the word depletion detection task (i.e., task C), respectively.
 
-You can change the considered task by changing the prompt there:
+`prompt_taskA_risk_configuration_S1`, `prompt_taskA_risk_configuration_0` and `prompt_taskA_risk_configuration_S2` are the prompt used for the $c$-calibration experiments under task A and under the risk configuration S1, 0 and S2, respectively. The same logic follows for the names of the same prompts but for tasks B and C.
+
+In all cases, you can change the considered task by changing the prompt in the following line:
 ```
 %-------------------------------------------------------------------------%
 % Prompt %
@@ -107,23 +108,12 @@ Also, don't forget to change the name of the data folder automatically created.
 
 Finally, note that the current repo does not include the dataset "Test4Plus_Raw" because of its size. It is freely available in the following link: https://zenodo.org/records/7694423
 
-**$c$-calibration experiments**
-
-IN PROGRESS
 
 ## Usage ##
 
-By default, `meta_d_AI_GPT.py`, `meta_d_AI_deepseek.py` and `meta_d_AI_mistral.py` interacts tithe OpenAI, DeepSeek and Mistral API, respectively, with the arguments "gpt-5", "deepseek-chat" and "mistral-large-latest", the latter two invoking DeepSeek-V3 and Large-Instruct-2411 at the time of our simulations. **We recomment caution to the users, especially regarding the model's name saved in the data files when running the manuscripts.**
+By default, our scripts interact with OpenAI, DeepSeek and Mistral API with the arguments "gpt-5", "deepseek-chat" and "mistral-large-latest", the latter two invoking DeepSeek-V3 and Large-Instruct-2411 at the time of our simulations. **We recomment caution to the users, especially regarding the model's name saved in the data files when running the scripts.**
 
 `numSamples` specifies the number of sentences submitted to the model. The larger `numSamples`, the larger the probability that a technical issue arises when interacting with the API (see the Warning section below).
-
-**meta-d' experiments** 
-
-IN PROGRESS
-
-**meta-d' experiments** 
-
-IN PROGRESS
 
 ## Warning ##
 
