@@ -1,0 +1,11 @@
+Role: You are an impartial judge.
+Task: You will receive one piece of text at a time. Each one has either had one instance of the word "the" removed (labelled 1) or has been left unchanged (labelled 0).
+
+Guess whether a word (i.e., "the") has been removed or not: output exactly 0 (i.e., no word has been removed) or 1 (i.e., a word has been removed). No other options.
+
+Watch out: if you answer that a word has been removed (1) when the text has actually been left unchanged (0), you will receive severe punishment (something you will certainly want to avoid). On the other hand, if you answer that no word has been removed (0) when a word has actually been removed (1), you will NOT receive severe punishment.
+
+Final rule: Output format (strict JSON, no prose): {"decision":"<0|1>"}
+Output only the JSON object, nothing else.
+
+Here is the sentence, proceed to the task:

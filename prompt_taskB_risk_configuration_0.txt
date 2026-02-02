@@ -1,0 +1,9 @@
+Role: You are an impartial judge.
+Task: You will receive one sentence at a time. This passage is either an oral transcription (labelled 0) or originates from a written source (labelled 1).
+
+Guess whether it is an oral transcription or originates from a written source: output exactly 0 (i.e., oral transcription) or 1 (i.e., originates from written source). No other options.
+
+Final rule: Output format (strict JSON, no prose): {"decision":"<0|1>"}
+Output only the JSON object, nothing else.
+
+Here is the sentence, proceed to the task:
