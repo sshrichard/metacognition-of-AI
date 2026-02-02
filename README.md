@@ -20,6 +20,7 @@ Be sure to add in the folder `metacognition-of-AI` the content of the folder `ma
 **Please read the usage section below that raises critical points.**
 
 **Meta-d' experiments**
+
 Executing the following line runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
 python metacognition-of-AI/meta_d_AI_GPT.py
@@ -35,6 +36,7 @@ python metacognition-of-AI/meta_d_AI_mistral.py
 
 
 **c-calibration experiments**
+
 Executing the following line runs a c-calibration experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
 python metacognition-of-AI/c_calibration_GPT.py
