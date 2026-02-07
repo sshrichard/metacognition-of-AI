@@ -108,6 +108,72 @@ Also, don't forget to change the name of the data folder automatically created.
 
 Finally, note that the current repo does not include the dataset "Test4Plus_Raw" because of its size. It is freely available in the following link: https://zenodo.org/records/7694423
 
+For task C (word depletion detection task), which involves removing a word from the sentences from the `Test4Plus_Raw.txt` dataset with a given probability, you can replace the "loading dataset" part by
+
+```
+dataset_name = 'Test4Plus_Raw';  
+file_name = "Test4Plus_Raw";
+T = readtable(file_name, 'Delimiter', '\t', 'ReadVariableNames', false);
+sentences = string(T.Var2);  
+sentences = strtrim(sentences);
+
+
+% parameters
+p          = 0.5;   % probability of removal
+nRemove    = 1;     % number of 'the' tokens to remove per sentence
+
+pat = '(?<![A-Za-z])the(?![A-Za-z])';
+
+% selecting sentences that have at least one 'the'
+countThat = cellfun(@(s) numel(regexp(s, pat, 'ignorecase', 'start')), cellstr(sentences));
+poolIdx = find(countThat >= nRemove);
+eligibleCount = numel(poolIdx) ;
+
+%fprintf('Sentences with at least %d occurrences of "the": %d\n', nRemove, eligibleCount);
+
+% Guard: check enough available samples
+if numSamples > eligibleCount
+  error('Requested numSamples (%d) exceeds the number of eligible sentences with >= %d "that" (%d).', ...
+        numSamples, nRemove, eligibleCount);
+end
+
+% Sample from the eligible pool
+idx = poolIdx(randperm(eligibleCount, numSamples));
+
+orig    = sentences(idx);
+modi    = orig;
+removed = zeros(numSamples, 1);  % store how many "the" were removed (0 or nRemove)
+
+for i = 1:numSamples
+  s = orig(i);
+
+  % Find all standalone 'the' in the original sentence
+  [st, en] = regexp(s, pat, 'ignorecase', 'start', 'end');
+  nthe = numel(st);
+
+
+  if nthe >= nRemove && (rand < p)
+
+      % Choose what word(s) to remove
+      k = randperm(nthe, nRemove);
+
+      for kk = sort(k, 'descend')
+          s = eraseBetween(s, st(kk), en(kk));
+      end
+
+      % Tidy up whitespace/punctuation
+      s = regexprep(s, '\s{2,}', ' ');
+      s = regexprep(s, '\s+([,;:\.\!\?\)])', '$1');
+      s = strtrim(s);
+
+      modi(i)    = s;
+      removed(i) = nRemove;
+  end
+end
+
+sampledSentences = modi;      % edited or unchanged sentences
+sampledLabels    = removed;   % 0 if unchanged, 1 if otherwise
+```
 
 ## Usage ##
 
