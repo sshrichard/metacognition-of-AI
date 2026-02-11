@@ -106,7 +106,7 @@ sampledSentences = sentences(idx);
 sampledLabels    = labels(idx);
 ```
 
-Also, don't forget to change the name of the data folder automatically created.
+Also, don't forget to change the name of the data folder automatically created at the end of the experiments.
 
 Finally, note that the current repo does not include the dataset "Test4Plus_Raw" because of its size. It is freely available in the following link: https://zenodo.org/records/7694423
 
