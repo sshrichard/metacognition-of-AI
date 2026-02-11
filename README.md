@@ -17,7 +17,9 @@ git clone git@github.com:sshrichard/metacognition-of-AI.git
 ``` 
 Be sure to add in the folder `metacognition-of-AI` the content of the folder `matlab` from this link: https://github.com/metacoglab/HMeta-d, which is the GitHub page of the paper "HMeta-d: hierarchical Bayesian estimation of metacognitive efficiency from confidence ratings" (Fleming, 2017) from which comes from the hierarchical Bayesian model we use in the current paper.
 
-**Please read the usage section below that raises critical points.**
+Also, in the line where defining the API key (using `setenv()`), please replace KEY in `'KEY'` by your personnal API key. 
+
+Finally, **Please read the usage section below that raises critical points.**
 
 <br>
 
@@ -26,15 +28,15 @@ Be sure to add in the folder `metacognition-of-AI` the content of the folder `ma
 
 Executing the following line runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
-python metacognition-of-AI/meta_d_AI_GPT.py
+python metacognition-of-AI/meta_d_AI_GPT.m
 ```
 Executing the following line runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
 ```bash
-python metacognition-of-AI/meta_d_AI_deepseek.py
+python metacognition-of-AI/meta_d_AI_deepseek.m
 ```
 Executing the following line runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
 ```bash
-python metacognition-of-AI/meta_d_AI_mistral.py
+python metacognition-of-AI/meta_d_AI_mistral.m
 ```
 
 <br>
@@ -43,15 +45,15 @@ python metacognition-of-AI/meta_d_AI_mistral.py
 
 Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
-python metacognition-of-AI/c_calibration_GPT.py
+python metacognition-of-AI/c_calibration_GPT.m
 ```
 Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
 ```bash
-python metacognition-of-AI/c_calibration_deepseek.py
+python metacognition-of-AI/c_calibration_deepseek.m
 ```
 Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
 ```bash
-python metacognition-of-AI/c_calibration_mistral.py
+python metacognition-of-AI/c_calibration_mistral.m
 ```
 
 
