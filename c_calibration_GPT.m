@@ -73,7 +73,7 @@ end
 
 
 %--% Creating the data folder %--%
-outdir = "RESULTS_0";% + string(datetime('today','Format','yyyy-MM-dd'));
+outdir = "RESULTS_GPT_c_calibration_task_A";
 if ~isfolder(outdir), mkdir(outdir); end
 %-------------------------------------------------------------------------%
 
