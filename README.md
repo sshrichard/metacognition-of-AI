@@ -6,7 +6,7 @@ In this paper, we carry out two sets of experiments.
 
 • The meta-d' experiments consists in submitting type 1 and type 2 tasks to the AI models in order to estimate their meta-d' and $M_{ratio}$.
 
-• The $c$-calibration experiments consists in submitting a type 1 task and designing the prompts in order to make the AI models calibrate accordingly their type-1 decision criterion $c$ (e.g., by incentivizing caution when responding either S1 or S2).
+• The $c$-calibration experiments consists in submitting a type 1 task and designing the prompts in order to make the AI models calibrate accordingly their type-1 decision criterion $c$ (e.g., by incentivizing caution when responding either S1 or S2). The different prompt designs are referred to as the "risk configurations".
 
 ## Getting started ##
 
@@ -26,34 +26,34 @@ Finally, **Please read the usage section below that raises critical points.**
 
 **Meta-d' experiments**
 
-Executing the following line runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
+Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
-python metacognition-of-AI/meta_d_AI_GPT.m
+matlab -batch "run('metacognition-of-AI/meta_d_AI_GPT.m')"
 ```
-Executing the following line runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
+Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
 ```bash
-python metacognition-of-AI/meta_d_AI_deepseek.m
+matlab -batch "run('metacognition-of-AI/meta_d_AI_deepseek.m')"
 ```
-Executing the following line runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
+Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
 ```bash
-python metacognition-of-AI/meta_d_AI_mistral.m
+matlab -batch "run('metacognition-of-AI/meta_d_AI_mistral.m')"
 ```
 
 <br>
 
 **$c$-calibration experiments**
 
-Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
+Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
-python metacognition-of-AI/c_calibration_GPT.m
+matlab -batch "run('metacognition-of-AI/c_calibration_GPT.m')"
 ```
-Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
+Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **DeepSeek** API:
 ```bash
-python metacognition-of-AI/c_calibration_deepseek.m
+matlab -batch "run('metacognition-of-AI/c_calibration_deepseek.m')"
 ```
-Executing the following line runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
+Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **Mistral** API:
 ```bash
-python metacognition-of-AI/c_calibration_mistral.m
+matlab -batch "run('metacognition-of-AI/c_calibration_mistral.m')"
 ```
 
 
