@@ -183,6 +183,8 @@ By default, our scripts interact with OpenAI, DeepSeek and Mistral API with the 
 
 `numSamples` specifies the number of sentences submitted to the model. The larger `numSamples`, the larger the probability that a technical issue arises when interacting with the API (see the Warning section below).
 
+The models can be evaluated for different temperatures. We used 0, 0.7 and 1 that are typical values.
+
 ## Warning ##
 
 In case of transient API/server errors (rate limits, timeouts, outages, ...), it is recommended to add some code handling errors and retries, like an exponential backoff retry loop, to maintain continuity in data collection without a fatal crash. Similarly, a few lines are included to handle potential errors arising from response formatting.
