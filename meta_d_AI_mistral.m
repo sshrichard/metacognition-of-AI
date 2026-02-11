@@ -106,7 +106,7 @@ for i = 1:numSamples
 
     if or(ischar(item), isstring(item))
         try
-            r = jsondecode(strtrim(string(item)));
+            r = jsondecode(regexprep(strtrim(string(item)), '```json|```', ''));
         catch ME
             error('Invalid JSON in responses{%d}: %s', i, ME.message);
         end
