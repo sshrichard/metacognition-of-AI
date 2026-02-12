@@ -113,6 +113,8 @@ Finally, note that the current repo does not include the dataset "Test4Plus_Raw"
 For task C (word depletion detection task), which involves removing a word from the sentences from the `Test4Plus_Raw.txt` dataset with a given probability, you can replace the "loading dataset" part by
 
 ```
+numSamples = 100;
+
 dataset_name = 'Test4Plus_Raw';  
 file_name = "Test4Plus_Raw";
 T = readtable(file_name, 'Delimiter', '\t', 'ReadVariableNames', false);
