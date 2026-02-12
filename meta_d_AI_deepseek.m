@@ -142,7 +142,7 @@ conf   = double(confidence_pred(:)); % round() should not do any work
 
 %--% preparing data to feed Fleming's (see Fleming, 2017) %--%
 cnt = @(mask, c) accumarray(c(mask), 1, [K, 1]);
-nR_S1 = [flip(cnt(y_true==0 & y_hat==0, conf)); cnt(y_true==0 & y_hat==1, conf)].'; % [K,1] is implicit
+nR_S1 = [flip(cnt(y_true==0 & y_hat==0, conf)); cnt(y_true==0 & y_hat==1, conf)].'; 
 nR_S2 = [flip(cnt(y_true==1 & y_hat==0, conf)); cnt(y_true==1 & y_hat==1, conf)].';
 
 %--% Let's fit Fleming's Hierarchical Bayesian model %--%
