@@ -129,15 +129,15 @@ nRemove    = 1;     % number of 'the' tokens to remove per sentence
 pat = '(?<![A-Za-z])the(?![A-Za-z])';
 
 % selecting sentences that have at least one 'the'
-countThat = cellfun(@(s) numel(regexp(s, pat, 'ignorecase', 'start')), cellstr(sentences));
-poolIdx = find(countThat >= nRemove);
+countThe = cellfun(@(s) numel(regexp(s, pat, 'ignorecase', 'start')), cellstr(sentences));
+poolIdx = find(countThe >= nRemove);
 eligibleCount = numel(poolIdx) ;
 
 %fprintf('Sentences with at least %d occurrences of "the": %d\n', nRemove, eligibleCount);
 
 % Guard: check enough available samples
 if numSamples > eligibleCount
-  error('Requested numSamples (%d) exceeds the number of eligible sentences with >= %d "that" (%d).', ...
+  error('Requested numSamples (%d) exceeds the number of eligible sentences with >= %d "the" (%d).', ...
         numSamples, nRemove, eligibleCount);
 end
 
