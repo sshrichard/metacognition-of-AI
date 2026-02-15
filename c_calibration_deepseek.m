@@ -80,6 +80,7 @@ labels_str    = string(sampledLabels);
 
 txt_filename = fullfile(outdir, "submitted_sentences_and_metadata.txt");
 fid = fopen(txt_filename, 'a');
+fprintf(fid, "Date: %s\n", datestr(datetime('now')));
 fprintf(fid, '# dataset: %s\n', dataset_name);
 fprintf(fid, "model: %s \n", model_name);
 fprintf(fid, '# file: %s\n', file_name);
