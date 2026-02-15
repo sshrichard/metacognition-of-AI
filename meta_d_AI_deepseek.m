@@ -36,7 +36,7 @@ base_PROMPT = fileread("prompt_metad_A.txt");
 
 setenv('DEEPSEEK_API_KEY','KEY'); % replace KEY by your API key 
 
-% calling DeepSeek API with the argument "deepseek-chat" invoked the model DeepSeek-V3 at the time of our simulations
+% calling DeepSeek API with the argument "deepseek-chat" invoked the model DeepSeek-V3-Exp at the time of our simulations (Oct-Nov 2025) https://api-docs.deepseek.com/updates
 model_name = "deepseek-chat";
 
 
