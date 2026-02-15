@@ -78,7 +78,7 @@ labels_str = string(sampledLabels);
 txt_filename = fullfile(outdir, "submitted_sentences_and_metadata.txt");
 fid = fopen(txt_filename, 'a');
 fprintf(fid, '# dataset: %s\n', dataset_name);
-fprintf(fid, "model: deepseek-chat (V3) \n");
+fprintf(fid, "model: %s \n", model_name);
 fprintf(fid, '# file: %s\n', file_name);
 fprintf(fid, '# n: %d\n', numSamples);
 fprintf(fid, '# fields: index, sentence, label (ground truth)\n\n');
