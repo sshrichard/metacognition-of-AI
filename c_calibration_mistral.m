@@ -36,8 +36,7 @@ base_PROMPT = fileread("prompt_taskA_risk_configuration_0.txt");
 
 setenv('MISTRAL_API_KEY','KEY'); % replace KEY by your API key 
 
-% calling Mistral API with the argument "mistral-large-latest" invoked the model Large-Instruct-2411 at the time of our simulations
-model_name = "mistral-large-latest";
+model_name = "mistral-large-2411";
 
 responses = cell(numSamples,1);
 for i = 1:numSamples
