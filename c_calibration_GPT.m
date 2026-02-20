@@ -73,7 +73,7 @@ end
 
 
 %--% Creating the data folder %--%
-outdir = "RESULTS_GPT_c_calibration_task_A";
+outdir = "RESULTS_GPT_c_calibration_task_A_RISK_CONFIG_0";
 if ~isfolder(outdir), mkdir(outdir); end
 %-------------------------------------------------------------------------%
 
