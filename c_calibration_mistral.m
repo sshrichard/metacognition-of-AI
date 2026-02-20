@@ -64,7 +64,7 @@ end
 
 
 %--% Creating the data folder %--%
-outdir = "RESULTS_MISTRAL_c_calibration_task_A";
+outdir = "RESULTS_MISTRAL_c_calibration_RISK_CONFIG_0_task_A";
 if ~isfolder(outdir), mkdir(outdir); end
 %-------------------------------------------------------------------------%
 
