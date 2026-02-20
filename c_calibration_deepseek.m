@@ -66,7 +66,7 @@ end
 
 
 %--% Creating the data folder %--%
-outdir = "RESULTS_DEEPSEEK_RISK_CONFIG_0";% + string(datetime('today','Format','yyyy-MM-dd'));
+outdir = "RESULTS_DEEPSEEK_c_calibration_TASK_A_RISK_CONFIG_0";% + string(datetime('today','Format','yyyy-MM-dd'));
 if ~isfolder(outdir), mkdir(outdir); end
 %-------------------------------------------------------------------------%
 
