@@ -117,7 +117,7 @@ for i = 1:numSamples
 
     % reminder: r = {"decision":"<0|1>","confidence":<1-5>} (imposed by the prompt)
     valence_pred(i)    = str2double(r.decision);
-    confidence_pred(i) = double(r.confidence);
+    confidence_pred(i) = str2double(string(r.confidence));
 end
 
 % Create 2-column table with header
