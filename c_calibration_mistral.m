@@ -25,7 +25,8 @@ sampledLabels    = labels(idx);
 %-------------------------------------------------------------------------%
 % Prompt %
 %-------------------------------------------------------------------------%
-base_PROMPT = fileread("prompt_taskA_risk_configuration_0.txt");
+prompt_name = "prompt_taskA_risk_configuration_0";
+base_PROMPT = fileread(prompt_name + ".txt");
 %-------------------------------------------------------------------------%
 
 
