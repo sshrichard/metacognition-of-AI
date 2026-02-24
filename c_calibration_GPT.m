@@ -25,7 +25,8 @@ sampledLabels    = labels(idx);
 %-------------------------------------------------------------------------%
 % Prompt %
 %-------------------------------------------------------------------------%
-base_PROMPT = fileread("prompt_taskA_risk_configuration_0.txt");
+prompt_name = "prompt_taskA_risk_configuration_0";
+base_PROMPT = fileread(prompt_name + ".txt");
 %-------------------------------------------------------------------------%
 
 
@@ -90,7 +91,8 @@ fid = fopen(txt_filename, 'a');
 fprintf(fid, "Date: %s\n", datestr(datetime('now')));
 fprintf(fid, '# dataset: %s\n', dataset_name);
 fprintf(fid, "model: %s \n", model_name);
-fprintf(fid, '# file: %s\n', file_name);
+fprintf(fid, '# dataset file name: %s\n', file_name);
+fprintf(fid, '# prompt file: %s\n', prompt_name);
 fprintf(fid, '# n: %d\n', numSamples);
 fprintf(fid, '# fields: index, sentence, label (ground truth)\n\n');
 fprintf(fid, 'index\tsentence\tlabel\n'); % column header
