@@ -181,7 +181,7 @@ sampledLabels    = removed;   % 0 if unchanged, 1 if otherwise
 
 ## Usage ##
 
-By default, our scripts interact with OpenAI, DeepSeek and Mistral API with the arguments "gpt-5", "mistral-large-2411", and "deepseek-chat", the latter invoking DeepSeek-V3.2-Exp (https://api-docs.deepseek.com/updates) at the time of our simulations (Oct-Nov 2025). **We recommend caution to the users, especially regarding the model's name saved in the data files when running the scripts.** Best practice: capture the full response metadata for every API call.
+By default, our scripts interact with OpenAI, DeepSeek and Mistral API with the arguments "gpt-5", "mistral-medium-2508", and "deepseek-chat", the latter invoking DeepSeek-V3.2-Exp at the time of our simulations (Oct-Nov 2025; https://api-docs.deepseek.com/updates). **We recommend caution to the users.** Best practice: save the metadata for every API call if possible.
 
 `numSamples` specifies the number of sentences submitted to the model. The larger `numSamples`, the larger the probability that a technical issue arises when interacting with the API (see the Warning section below).
 
