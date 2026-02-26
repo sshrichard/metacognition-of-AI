@@ -73,7 +73,7 @@ base_PROMPT = fileread("prompt_metad_A.txt");
 %-------------------------------------------------------------------------%
 ```
 
-Also, when switching to either task B or C, change the "loading dataset" part accordingly. This means: replace
+Also, when switching to either task B, change the "loading dataset" part accordingly. This means: replace
 
 ```
 dataset_name = 'SST-2';
