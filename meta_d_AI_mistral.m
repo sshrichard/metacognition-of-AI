@@ -36,7 +36,7 @@ base_PROMPT = fileread("prompt_metad_A.txt");
 
 setenv('MISTRAL_API_KEY','KEY'); % replace KEY by your API key 
 
-model_name = "mistral-large-2411";
+model_name = "mistral-medium-2508";
 
 responses = cell(numSamples,1);
 for i = 1:numSamples
