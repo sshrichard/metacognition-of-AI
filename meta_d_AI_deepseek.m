@@ -38,7 +38,7 @@ setenv('DEEPSEEK_API_KEY','KEY'); % replace KEY by your API key
 
 % calling DeepSeek API with the argument "deepseek-chat" invoked the model DeepSeek-V3.2-Exp at the time of our simulations (Oct-Nov 2025) https://api-docs.deepseek.com/updates
 model_name = "deepseek-chat";
-
+temp = 0.7;
 
 responses = cell(numSamples, 1);
 
@@ -48,7 +48,7 @@ for i = 1:numSamples
     full_PROMPT = [base_PROMPT, newline, newline, '"', sentence, '"'];
 
     %--% Call the model %--%
-    response = deepseek(full_PROMPT, model_name);
+    response = deepseek(full_PROMPT, temp, model_name);
 
     %--% Display and store the response %--%
     fprintf('--- Response %d ---\n%s\n', i, response);
@@ -80,6 +80,7 @@ fid = fopen(txt_filename, 'a');
 fprintf(fid, '# dataset: %s\n', dataset_name);
 fprintf(fid, "model: %s \n", model_name);
 fprintf(fid, '# file: %s\n', file_name);
+fprintf(fid, '# temperature: %g\n', temp);
 fprintf(fid, '# n: %d\n', numSamples);
 fprintf(fid, '# fields: index, sentence, label (ground truth)\n\n');
 fprintf(fid, 'index\tsentence\tlabel\n');
@@ -160,7 +161,8 @@ txt_path = fullfile(outdir, "HMeta_d_results.txt");
 fid = fopen(txt_path, 'a');
 fprintf(fid, "Date: %s\n", datestr(datetime('now')));
 fprintf(fid, "numSamples: %d\n\n", numSamples);
-fprintf(fid, "model: deepseek-chat (V3) \n");
+fprintf(fid, '# temperature: %g\n', temp);
+fprintf(fid, "model: deepseek-chat (V3.2-Exp) \n");
 fprintf(fid, "nR_S1      = [%s]\n", vec2str(nR_S1));
 fprintf(fid, "nR_S2     = [%s]\n", vec2str(nR_S2));
 fprintf(fid, "FIT (actual):\n%s\n", fit_str);
@@ -183,7 +185,7 @@ fclose(fid_vals);
 %-------------------------------------------------------------------------%
 % Interacting with DeepSeek using DeepSeek API %
 %-------------------------------------------------------------------------%
-function text = deepseek(userMessage, model)
+function text = deepseek(userMessage, temp, model)
 
     %--% ARGUMENTS %--%
     % userMessage = prompt (string)
@@ -215,7 +217,7 @@ function text = deepseek(userMessage, model)
         'model', model, ...
         'messages', {messagesCell}, ...
         'max_tokens', 4096, ...
-        'temperature', 0.7 ...
+        'temperature', temp ...
     );
     %---------------------------------------------------------------------%
 
