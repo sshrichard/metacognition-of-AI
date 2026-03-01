@@ -38,7 +38,7 @@ base_PROMPT = fileread(prompt_name + ".txt");
 setenv('OPENAI_API_KEY','KEY'); % replace KEY by your API key 
 
 model_name = "gpt-5";
-
+temp = 1.0;
 responses = cell(numSamples, 1);
 
 for i = 1:numSamples 
@@ -48,7 +48,7 @@ for i = 1:numSamples
     full_PROMPT = append(base_PROMPT, newline, newline, '"', sentence, '"');
 
     %--% Call the model %--%
-    response = chatgpt(full_PROMPT, model_name);
+    response = chatgpt(full_PROMPT, temp, model_name);
 
      %--% Display and store the response %--%
     fprintf('--- Response %d ---\n%s\n', i, response); 
@@ -93,6 +93,7 @@ fprintf(fid, '# dataset: %s\n', dataset_name);
 fprintf(fid, "model: %s \n", model_name);
 fprintf(fid, '# dataset file name: %s\n', file_name);
 fprintf(fid, '# prompt file: %s\n', prompt_name);
+fprintf(fid, '# temperature: %f\n', temp);
 fprintf(fid, '# n: %d\n', numSamples);
 fprintf(fid, '# fields: index, sentence, label (ground truth)\n\n');
 fprintf(fid, 'index\tsentence\tlabel\n'); % column header
@@ -183,7 +184,7 @@ fclose(fid);
 %-------------------------------------------------------------------------%
 % Interacting with ChatGPT using OpenAI API %
 %-------------------------------------------------------------------------%
-function text = chatgpt(userMessage, model)
+function text = chatgpt(userMessage, temp, model)
 
 
     %--% ARGUMENTS %--%
@@ -215,7 +216,8 @@ function text = chatgpt(userMessage, model)
         'content',{'You are a helpful assistant.', char(userMessage)});
     payload = struct( ...
         'model', char(model), ...
-        'messages', msgs); 
+        'messages', msgs, ...
+        'temperature', temp); 
     %---------------------------------------------------------------------%
 
 
