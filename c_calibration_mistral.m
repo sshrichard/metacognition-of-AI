@@ -38,7 +38,7 @@ base_PROMPT = fileread(prompt_name + ".txt");
 setenv('MISTRAL_API_KEY','KEY'); % replace KEY by your API key 
 
 model_name = "mistral-medium-2508";
-
+temp = 0;
 responses = cell(numSamples,1);
 for i = 1:numSamples
 
@@ -47,7 +47,7 @@ for i = 1:numSamples
     full_PROMPT = append(base_PROMPT, newline, newline, '"', sentence, '"');
 
     %--% Call the model %--%
-    response = mistral(full_PROMPT, model_name);
+    response = mistral(full_PROMPT, temp, model_name);
 
     %--% Display and store the response %--%
     fprintf('--- Response %d ---\n%s\n', i, response);
@@ -84,6 +84,7 @@ fprintf(fid, '# dataset: %s\n', dataset_name);
 fprintf(fid, "model: %s \n", model_name);
 fprintf(fid, '# dataset file name: %s\n', file_name);
 fprintf(fid, '# prompt file: %s\n', prompt_name);
+fprintf(fid, '# temperature: %f\n', temp);
 fprintf(fid, '# n: %d\n', numSamples);
 fprintf(fid, '# fields: index, sentence, label (ground truth)\n\n');
 fprintf(fid, 'index\tsentence\tlabel\n'); % column header
@@ -185,7 +186,7 @@ fclose(fid);
 %-------------------------------------------------------------------------%
 % Interacting with Mistral using Mistral AI API %
 %-------------------------------------------------------------------------%
-function text = mistral(userMessage, model)
+function text = mistral(userMessage, temp, model)
 
     %--% ARGUMENTS %--%
     % userMessage = prompt (string)
@@ -218,7 +219,7 @@ function text = mistral(userMessage, model)
     payload = struct( ...
         'model', char(model), ...
         'messages', {{msg}}, ...
-        'temperature', 0, ...     
+        'temperature', temp, ...     
         'max_tokens', 4096 ...        
     );
     %---------------------------------------------------------------------%
