@@ -36,7 +36,7 @@ base_PROMPT = fileread("prompt_metad_A.txt");
 
 setenv('OPENAI_API_KEY','KEY'); % replace KEY by your API key 
 
-model_name = "gpt-5";
+model_name = "gpt-5-2025-08-07";
 temp = 1.0;
 
 responses = cell(numSamples, 1);
