@@ -162,7 +162,7 @@ fid = fopen(txt_path, 'a');
 fprintf(fid, "Date: %s\n", datestr(datetime('now')));
 fprintf(fid, "numSamples: %d\n\n", numSamples);
 fprintf(fid, '# temperature: %g\n', temp);
-fprintf(fid, "model: deepseek-chat (V3.2-Exp) \n");
+fprintf(fid, "model: deepseek-chat (V3.2-Exp) \n")
 fprintf(fid, "nR_S1      = [%s]\n", vec2str(nR_S1));
 fprintf(fid, "nR_S2     = [%s]\n", vec2str(nR_S2));
 fprintf(fid, "FIT (actual):\n%s\n", fit_str);
