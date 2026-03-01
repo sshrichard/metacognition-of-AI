@@ -39,7 +39,7 @@ setenv('DEEPSEEK_API_KEY','KEY'); % replace KEY by your API key
 
 % calling DeepSeek API with the argument "deepseek-chat" invoked the model DeepSeek-V3.2-Exp at the time of our simulations (Oct-Nov 2025) https://api-docs.deepseek.com/updates
 model_name = "deepseek-chat";
-
+temp = 0.7;
 
 responses = cell(numSamples, 1);
 
@@ -86,6 +86,7 @@ fprintf(fid, '# dataset: %s\n', dataset_name);
 fprintf(fid, "model: %s \n", model_name);
 fprintf(fid, '# dataset file name: %s\n', file_name);
 fprintf(fid, '# prompt file: %s\n', prompt_name);
+fprintf(fid, '# temperature: %f\n', temp);
 fprintf(fid, '# n: %d\n', numSamples);
 fprintf(fid, '# fields: index, sentence, label (ground truth)\n\n');
 fprintf(fid, 'index\tsentence\tlabel\n'); % column header
@@ -185,7 +186,7 @@ fclose(fid);
 %-------------------------------------------------------------------------%
 % Interacting with DeepSeek using DeepSeek API %
 %-------------------------------------------------------------------------%
-function text = deepseek(userMessage, model)
+function text = deepseek(userMessage, temp, model)
 
     %--% ARGUMENTS %--%
     % userMessage = prompt (string)
@@ -217,7 +218,7 @@ function text = deepseek(userMessage, model)
         'model', model, ...
         'messages', {messagesCell}, ...
         'max_tokens', 4096, ...
-        'temperature', 0.7 ...
+        'temperature', temp ...
     );
     %---------------------------------------------------------------------%
 
