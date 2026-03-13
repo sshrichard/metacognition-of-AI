@@ -185,7 +185,7 @@ By default, our scripts interact with OpenAI, DeepSeek and Mistral API with the 
 
 `numSamples` specifies the number of sentences submitted to the model. The larger `numSamples`, the larger the probability that a technical issue arises when interacting with the API (see the Warning section below).
 
-The models can be evaluated for different temperatures. We used 0, 0.7 and 1 that are typical values.
+The models can be evaluated for different temperatures. We used 0, 0.7 and 1 that are typical values. We also varied whether a system message "You are a helpful assistant" was included alongside the user prompt.
 
 ## Warning ##
 
