@@ -204,7 +204,7 @@ function text = chatgpt(userMessage, temp, model)
     %--% Safety tests %--%
     %---------------------------------------------------------------------%
     % safety check for arguments
-    if or(nargin < 2, isempty(model)), model = 'gpt-5'; end
+    if or(nargin < 2, isempty(model)), model = 'gpt-5-2025-08-07'; end
 
     % safety check for the API key
     apiKey = getenv('OPENAI_API_KEY');
