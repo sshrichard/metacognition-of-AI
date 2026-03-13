@@ -116,7 +116,7 @@ for i = 1:numSamples
         try
             r = jsondecode(item_str);
         catch
-            error('Invalid JSON in responses{%d}: %s', i, ME.message);
+            error('Unexpected type in responses{%d}: %s', i, class(item));
         end
     elseif isstruct(item)
         r = item;
