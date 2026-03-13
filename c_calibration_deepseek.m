@@ -115,13 +115,13 @@ for i = 1:numSamples
         
         try
             r = jsondecode(item_str);
-        catch
-            error('Unexpected type in responses{%d}: %s', i, class(item));
+        catch ME
+            error('Invalid JSON in responses{%d}: %s', i, ME.message);
         end
     elseif isstruct(item)
         r = item;
     else
-        r = struct('decision', '0');
+        error('Unexpected type in responses{%d}: %s', i, class(item));
     end
 
     valence_pred(i)    = str2double(r.decision);
