@@ -133,7 +133,7 @@ T = table(valence_pred, ...
 
 % Save to CSV
 csv_filename = fullfile(outdir, "deepseek_responses.csv");
-writetable(T, csv_filename);
+writetable(T, csv_filename, 'WriteMode', 'append');
 %-------------------------------------------------------------------------%
 
 
