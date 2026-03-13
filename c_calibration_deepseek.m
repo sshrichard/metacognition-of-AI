@@ -116,7 +116,7 @@ for i = 1:numSamples
         try
             r = jsondecode(item_str);
         catch
-            r = struct('decision', '0');
+            error('Invalid JSON in responses{%d}: %s', i, ME.message);
         end
     elseif isstruct(item)
         r = item;
