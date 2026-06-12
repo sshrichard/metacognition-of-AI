@@ -26,6 +26,8 @@ Finally, **Please read the usage section below that raises critical points.**
 
 **Meta-d' experiments**
 
+Data file: The text file `data_nR_S1_nR_S2` contains all nR_S1 and nR_S2 lists (see Fleming [2017] for terminology) from the meta-d' experiments.
+
 Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a meta-d' experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
 matlab -batch "run('metacognition-of-AI/meta_d_AI_GPT.m')"
@@ -42,6 +44,8 @@ matlab -batch "run('metacognition-of-AI/meta_d_AI_mistral.m')"
 <br>
 
 **$c$-calibration experiments**
+
+Data file: The spreadsheet `data_c_calibration_experiments` contains all hit, miss, false alarm, and correct rejection counts from the $c$-calibration experiments.
 
 Executing the following line (you may need to replace "matlab" with the full path to your MATLAB) runs a $c$-calibration experiment under the sentiment analysis task (i.e., task A) via the **OpenAI** API:
 ```bash
