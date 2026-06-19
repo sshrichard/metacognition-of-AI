@@ -8,6 +8,8 @@ In this paper, we carry out two sets of experiments.
 
 • The $c$-calibration experiments consists in submitting a type 1 task and designing the prompts in order to make the AI models calibrate accordingly their type-1 decision criterion $c$ (e.g., by incentivizing caution when responding either S1 or S2). The different prompt designs are referred to as the "risk configurations".
 
+Note: AUC2 values were calculated using the script provided by Fleming et al. (available at: https://github.com/smfleming/Past-future-metacognition-paper; accessed June 13, 2026)
+
 ## Getting started ##
 
 Clone this repository on your local machine by running:
