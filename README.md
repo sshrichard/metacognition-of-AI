@@ -1,6 +1,6 @@
 # metacognition-of-AI
 
-Supporting repository for: "Measuring the metacognition of conversational AI models" (LINK TO BE ADDED). 
+Supporting repository for: "Measuring the metacognition of conversational AI models" (preprint available at https://arxiv.org/abs/2603.29693). 
 
 In this paper, we carry out two sets of experiments. 
 
